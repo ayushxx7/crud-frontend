@@ -5,21 +5,18 @@ import {
   UPDATE_PERSON,
   DELETE_PERSON,
 } from "../types";
+import axios from "axios";
 
 export const fetchPersons = () => (dispatch) => {
-  dispatch({
-    type: GET_PEOPLE,
-    payload: ['data']
-  })
-  // axios
-  //   .get(`/api`)
-  //   .then((res) => {
-  //     dispatch({
-  //       type: GET_PEOPLE,
-  //       payload: res.data,
-  //     });
-  //   })
-  //   .catch((err) => console.error(err));
+  axios
+    .get(`https://crud-person-node.herokuapp.com/persons`)
+    .then((res) => {
+      dispatch({
+        type: GET_PEOPLE,
+        payload: res.data,
+      });
+    })
+    .catch((err) => console.error(err));
 };
 
 export const addPerson = (data) => (dispatch) => {

@@ -7,7 +7,7 @@ import {
 } from "../types";
 
 const initialState = {
-  persons: 'Hello I am Person',
+  persons: {},
 };
 
 export default function (state = initialState, action) {
@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
       return { ...state };
 
     case GET_PEOPLE:
-      return { ...state };
+      return { ...state, persons: action.payload };
 
     case ADD_PERSON:
       return { ...state };

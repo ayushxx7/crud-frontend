@@ -6,6 +6,9 @@ class People extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount(){
+    this.props.fetchPersons();
+  }
 
   handleAddPerson = () => {
     this.props.addPerson(this.state.input);
