@@ -10,7 +10,7 @@ const initialState = {
   persons: {},
 };
 
-export default function (state = initialState, action) {
+const personReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_PERSON:
       return { ...state };
@@ -31,3 +31,5 @@ export default function (state = initialState, action) {
       return { ...state };
   }
 }
+
+export default personReducer;

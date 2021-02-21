@@ -25,4 +25,13 @@ export const addPerson = (data) => (dispatch) => {
     type: ADD_PERSON,
     payload: data,
   });
+  axios
+    .post(`https://crud-person-node.herokuapp.com/persons`, data)
+    .then((res) => {
+      dispatch({
+        type: ADD_PERSON,
+        payload: res.data,
+      });
+    })
+    .catch((err) => console.error(err));
 };

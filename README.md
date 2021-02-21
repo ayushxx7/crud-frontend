@@ -18,6 +18,7 @@ Further, we will be using [redux](https://react-redux.js.org/) to manage the sta
 [Building a Full Stack App](https://www.youtube.com/watch?v=GieYIzvdt2U&list=PLillGF-RfqbbRA-CIUxlxkUpbq0IFkX60&index=2)
 [Django + React App](https://www.valentinog.com/blog/drf/#Django_REST_with_React_Django_and_React_together)
 [Redux](https://www.youtube.com/watch?v=CVpUuw9XSjY)
+[Setting State using Dynamic Keys](https://stackoverflow.com/questions/29280445/reactjs-setstate-with-a-dynamic-key-name)
 
 ### Explore
 
