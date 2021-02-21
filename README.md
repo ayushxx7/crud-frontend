@@ -7,9 +7,10 @@ Hence, we will be using the 'create-react-app' toolchain.
 
 Further, we will be using [redux](https://react-redux.js.org/) to manage the state of the app.
 
-- Babel: Transpiles our code get
-- Webpack:
-- react preset:
+Note:
+
+- [Backend Repo](https://github.com/ayushxx7/crud)
+- [Backend Deployed @ Heroku](https://crud-person-node.herokuapp.com/persons)
 
 ### References
 

@@ -125,7 +125,7 @@ class AddPerson extends React.Component {
   };
 
   render() {
-    return <div>{this.addPersonForm()}</div>;
+    return <div className="container">{this.addPersonForm()}</div>;
   }
 }
 
