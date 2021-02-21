@@ -6,6 +6,7 @@ import {
   DELETE_PERSON,
 } from "../types";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const fetchPersons = () => (dispatch) => {
   axios
@@ -28,9 +29,13 @@ export const addPerson = (data) => (dispatch) => {
         type: ADD_PERSON,
         payload: res.data,
       });
+      toast.dark(`Added ${data.name} to DataBase`);
       dispatch(fetchPersons());
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      toast.error(`Error while adding person: ${err}`);
+    });
 };
 
 export const deletePerson = (personId) => (dispatch) => {
@@ -42,7 +47,11 @@ export const deletePerson = (personId) => (dispatch) => {
         type: DELETE_PERSON,
         payload: res.data,
       });
+      toast.error(`Deleted ${personId} from DataBase`);
       dispatch(fetchPersons());
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      toast.error(`Error while deleting person: ${err}`);
+    });
 };

@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class AddPerson extends React.Component {
   constructor(props) {
