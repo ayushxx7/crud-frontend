@@ -20,6 +20,7 @@ Note:
 [Django + React App](https://www.valentinog.com/blog/drf/#Django_REST_with_React_Django_and_React_together)
 [Redux](https://www.youtube.com/watch?v=CVpUuw9XSjY)
 [Setting State using Dynamic Keys](https://stackoverflow.com/questions/29280445/reactjs-setstate-with-a-dynamic-key-name)
+[Align Delete Button](https://stackoverflow.com/questions/6632340/place-a-button-right-aligned)
 
 ### Explore
 

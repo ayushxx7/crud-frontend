@@ -21,10 +21,6 @@ export const fetchPersons = () => (dispatch) => {
 
 export const addPerson = (data) => (dispatch) => {
   console.log(data);
-  dispatch({
-    type: ADD_PERSON,
-    payload: data,
-  });
   axios
     .post(`https://crud-person-node.herokuapp.com/persons`, data)
     .then((res) => {
@@ -32,6 +28,21 @@ export const addPerson = (data) => (dispatch) => {
         type: ADD_PERSON,
         payload: res.data,
       });
+      dispatch(fetchPersons());
+    })
+    .catch((err) => console.error(err));
+};
+
+export const deletePerson = (personId) => (dispatch) => {
+  console.log("Triggering delete on", personId);
+  axios
+    .delete(`https://crud-person-node.herokuapp.com/persons/${personId}`)
+    .then((res) => {
+      dispatch({
+        type: DELETE_PERSON,
+        payload: res.data,
+      });
+      dispatch(fetchPersons());
     })
     .catch((err) => console.error(err));
 };

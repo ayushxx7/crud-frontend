@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchPersons } from "../redux/actions/people";
+import { fetchPersons, deletePerson } from "../redux/actions/people";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import "../index.css";
 
 class People extends React.Component {
@@ -22,7 +24,14 @@ class People extends React.Component {
         border="info"
       >
         <Card.Header as="h5" id={`${person._id}_${person.name}`}>
-          {person.name}
+          {person.name}{" "}
+          <Button
+            variant="outline"
+            className="deleteButton p-0"
+            onClick={this.props.deletePerson.bind(this, person._id)}
+          >
+            🗑️
+          </Button>
         </Card.Header>
         <Card.Body>
           <Card.Title id={`${person._id}_${person.about}}`}>
@@ -78,4 +87,4 @@ class People extends React.Component {
 const mapStateToProps = (state) => ({
   persons: state.people.persons,
 });
-export default connect(mapStateToProps, { fetchPersons })(People);
+export default connect(mapStateToProps, { fetchPersons, deletePerson })(People);

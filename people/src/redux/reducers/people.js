@@ -7,7 +7,7 @@ import {
 } from "../types";
 
 const initialState = {
-  persons: {},
+  persons: [],
 };
 
 const personReducer = (state = initialState, action) => {
@@ -19,6 +19,7 @@ const personReducer = (state = initialState, action) => {
       return { ...state, persons: action.payload };
 
     case ADD_PERSON:
+      console.debug("add person:", action.payload);
       return { ...state };
 
     case UPDATE_PERSON:
@@ -30,6 +31,6 @@ const personReducer = (state = initialState, action) => {
     default:
       return { ...state };
   }
-}
+};
 
 export default personReducer;

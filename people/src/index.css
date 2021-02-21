@@ -9,5 +9,8 @@ body {
 
 .displayPerson {
   width: 18rem;
-  /* height: 5rem; */
+}
+
+.deleteButton {
+  float: right;
 }
