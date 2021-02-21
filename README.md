@@ -7,6 +7,8 @@ Hence, we will be using the 'create-react-app' toolchain.
 
 Further, we will be using [redux](https://react-redux.js.org/) to manage the state of the app.
 
+- [Frontend Deployed on GitHub](http://ayushxx7.github.io/crud-frontend)
+
 Note:
 
 - [Backend Repo](https://github.com/ayushxx7/crud)
@@ -21,7 +23,9 @@ Note:
 [Redux](https://www.youtube.com/watch?v=CVpUuw9XSjY)
 [Setting State using Dynamic Keys](https://stackoverflow.com/questions/29280445/reactjs-setstate-with-a-dynamic-key-name)
 [Align Delete Button](https://stackoverflow.com/questions/6632340/place-a-button-right-aligned)
+[Deploying React App to Github Pages](https://github.com/gitname/react-gh-pages)
 
 ### Explore
 
 [Next.js](https://nextjs.org/learn/basics/create-nextjs-app/setup)
+[Client Side Rendering vs Server Side Rendering](https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering)

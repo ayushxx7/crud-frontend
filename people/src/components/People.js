@@ -10,6 +10,7 @@ import "../index.css";
 
 class People extends React.Component {
   componentDidMount() {
+    document.title = "CRUD";
     this.props.fetchPersons();
   }
 
@@ -77,9 +78,10 @@ class People extends React.Component {
 
   render() {
     return (
-      <CardColumns className="container">
-        {this.displayPeopleCards()}
-      </CardColumns>
+      <div className="container">
+        {<h2>Exisiting People in Database</h2>}
+        <CardColumns>{this.displayPeopleCards()}</CardColumns>
+      </div>
     );
   }
 }

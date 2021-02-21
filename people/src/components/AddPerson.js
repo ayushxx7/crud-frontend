@@ -30,7 +30,18 @@ class AddPerson extends React.Component {
     e.preventDefault();
     console.debug("Submit");
     console.debug(this.state);
-    this.props.addPerson(this.state);
+
+    let data = this.state;
+
+    if (data["maritalStatus"] == "Single") {
+      console.log("Single => Set False");
+      data["married"] = false;
+    } else {
+      console.log("Married => Set True");
+      data["married"] = true;
+    }
+
+    this.props.addPerson(data);
   };
 
   addPersonForm = () => {
@@ -125,7 +136,12 @@ class AddPerson extends React.Component {
   };
 
   render() {
-    return <div className="container">{this.addPersonForm()}</div>;
+    return (
+      <div className="container">
+        {<h2>Add New Person to Database</h2>}
+        {this.addPersonForm()}
+      </div>
+    );
   }
 }
 
