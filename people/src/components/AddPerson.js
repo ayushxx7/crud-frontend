@@ -5,8 +5,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 class AddPerson extends React.Component {
   constructor(props) {
@@ -85,15 +83,6 @@ class AddPerson extends React.Component {
                 </Form.Group>
               </Form.Row>
 
-              <Form.Group controlId="address">
-                <Form.Label>Address</Form.Label>
-                <Form.Control
-                  placeholder="1234 Main St"
-                  value={address}
-                  onChange={this.onChange}
-                />
-              </Form.Group>
-
               <Form.Row>
                 <Form.Group as={Col} controlId="profession">
                   <Form.Label>Profession</Form.Label>
@@ -111,12 +100,21 @@ class AddPerson extends React.Component {
                     <option>Married</option>
                   </Form.Control>
                 </Form.Group>
-
-                <Form.Group as={Col} controlId="languages">
-                  <Form.Label>Languages You Know (Comma Separated)</Form.Label>
-                  <Form.Control onChange={this.onChange} value={languages} />
-                </Form.Group>
               </Form.Row>
+
+              <Form.Group controlId="address">
+                <Form.Label>Address</Form.Label>
+                <Form.Control
+                  placeholder="1234 Main St"
+                  value={address}
+                  onChange={this.onChange}
+                />
+              </Form.Group>
+
+              <Form.Group controlId="languages">
+                <Form.Label>Languages</Form.Label>
+                <Form.Control onChange={this.onChange} value={languages} />
+              </Form.Group>
 
               <Form.Group controlId="about">
                 <Form.Label>About</Form.Label>

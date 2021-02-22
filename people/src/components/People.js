@@ -5,7 +5,6 @@ import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import "../index.css";
 
 class People extends React.Component {
