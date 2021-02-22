@@ -20,13 +20,20 @@ const personReducer = (state = initialState, action) => {
 
     case ADD_PERSON:
       console.debug("add person:", action.payload);
-      return { ...state };
+      state.persons.push(action.payload)
+      return { ...state,
+        persons: state.persons
+      };
 
     case UPDATE_PERSON:
       return { ...state };
 
     case DELETE_PERSON:
-      return { ...state };
+      console.debug(action.payload)
+      console.debug('sp', state.persons)
+      return { ...state,
+        persons: state.persons.filter(person => person._id != action.payload)
+      };
 
     default:
       return { ...state };

@@ -21,13 +21,13 @@ export const fetchPersons = () => (dispatch) => {
 };
 
 export const addPerson = (data) => (dispatch) => {
-  console.log(data);
+  console.debug(data);
   axios
     .post(`https://crud-person-node.herokuapp.com/persons`, data)
     .then((res) => {
       dispatch({
         type: ADD_PERSON,
-        payload: res.data,
+        payload: res.data.Person,
       });
       toast.dark(`Added ${data.name} to DataBase`);
       dispatch(fetchPersons());
@@ -39,16 +39,15 @@ export const addPerson = (data) => (dispatch) => {
 };
 
 export const deletePerson = (personId) => (dispatch) => {
-  console.log("Triggering delete on", personId);
+  console.debug("Triggering delete on", personId);
   axios
     .delete(`https://crud-person-node.herokuapp.com/persons/${personId}`)
-    .then((res) => {
+    .then(() => {
       dispatch({
         type: DELETE_PERSON,
-        payload: res.data,
+        payload: personId,
       });
       toast.error(`Deleted ${personId} from DataBase`);
-      dispatch(fetchPersons());
     })
     .catch((err) => {
       console.error(err);
@@ -57,8 +56,8 @@ export const deletePerson = (personId) => (dispatch) => {
 };
 
 export const updatePerson = (personId, profession) => (dispatch) => {
-  console.log("Data:", personId, profession);
-  console.log("Triggering update on", personId);
+  console.debug("Data:", personId, profession);
+  console.debug("Triggering update on", personId);
   axios
     .patch(`https://crud-person-node.herokuapp.com/persons/${personId}`, {
       profession: profession,

@@ -9,22 +9,14 @@ import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
-import "../index.css";
 import Editable from "react-bootstrap-editable";
+import "../index.css";
 
 class People extends React.Component {
   componentDidMount() {
     document.title = "CRUD";
     this.props.fetchPersons();
   }
-
-  updateProfession = (personId, val) => {
-    console.log("Calling Update Person with value:", val);
-    this.props.updatePerson(this, {
-      pId: personId,
-      profession: val,
-    });
-  };
 
   renderCard = (person) => {
     return (

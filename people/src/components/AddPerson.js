@@ -34,10 +34,10 @@ class AddPerson extends React.Component {
     let data = this.state;
 
     if (data["maritalStatus"] == "Single") {
-      console.log("Single => Set False");
+      console.debug("Single => Set False");
       data["married"] = false;
     } else {
-      console.log("Married => Set True");
+      console.debug("Married => Set True");
       data["married"] = true;
     }
 
@@ -146,6 +146,7 @@ class AddPerson extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  // persons: state.people.persons
+  persons: state.people.persons,
 });
+
 export default connect(mapStateToProps, { addPerson })(AddPerson);
