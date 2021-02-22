@@ -14,6 +14,33 @@ Note:
 - [Backend Repo](https://github.com/ayushxx7/crud)
 - [Backend Deployed @ Heroku](https://crud-person-node.herokuapp.com/persons)
 
+### To Test Locally
+
+```
+npm install
+npm start
+```
+
+- This should open up the Dashboard on `localhost:3000`
+
+### To Deploy to GitHub Pages
+
+```
+npm run deploy
+```
+
+### Tech Stack
+
+| Tech                       | Use Case                                          |
+| -------------------------- | ------------------------------------------------- |
+| `React`                    | UI/UX                                             |
+| `Redux`                    | State Management                                  |
+| `react-bootstrap`          | render forms, buttons and cards                   |
+| `react-bootstrap-editable` | render Editable component for updating Profession |
+| `react-toastify`           | show notifications after success or failure       |
+| `axios`                    | make API calls to backend                         |
+| `redux-devtools-extension` | connect with redux devtools extension             |
+
 ### References
 
 [React.js - Create new React App](https://reactjs.org/docs/create-a-new-react-app.html)
