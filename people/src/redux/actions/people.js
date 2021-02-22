@@ -55,3 +55,23 @@ export const deletePerson = (personId) => (dispatch) => {
       toast.error(`Error while deleting person: ${err}`);
     });
 };
+
+export const updatePerson = (personId, profession) => (dispatch) => {
+  console.log("Data:", personId, profession);
+  console.log("Triggering update on", personId);
+  axios
+    .patch(`https://crud-person-node.herokuapp.com/persons/${personId}`, {
+      profession: profession,
+    })
+    .then((res) => {
+      dispatch({
+        type: UPDATE_PERSON,
+        payload: res.data,
+      });
+      toast.success(`Profession changed to ${profession}`);
+    })
+    .catch((err) => {
+      console.error(err);
+      toast.error(`Error while updating person: ${err}`);
+    });
+};

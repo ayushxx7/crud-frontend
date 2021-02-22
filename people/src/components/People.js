@@ -1,17 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchPersons, deletePerson } from "../redux/actions/people";
+import {
+  fetchPersons,
+  deletePerson,
+  updatePerson,
+} from "../redux/actions/people";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import "../index.css";
+import Editable from "react-bootstrap-editable";
 
 class People extends React.Component {
   componentDidMount() {
     document.title = "CRUD";
     this.props.fetchPersons();
   }
+
+  updateProfession = (personId, val) => {
+    console.log("Calling Update Person with value:", val);
+    this.props.updatePerson(this, {
+      pId: personId,
+      profession: val,
+    });
+  };
 
   renderCard = (person) => {
     return (
@@ -60,7 +73,16 @@ class People extends React.Component {
             id={`${person._id}_${person.profession}`}
           >
             <b>Profession: </b>
-            {person.profession}
+
+            <Editable
+              type="textfield"
+              mode="inline"
+              initialValue={person.profession}
+              editText="✏️"
+              onSubmit={(profession) =>
+                this.props.updatePerson(person._id, profession)
+              }
+            />
           </ListGroup.Item>
         </ListGroup>
       </Card>
@@ -88,4 +110,8 @@ class People extends React.Component {
 const mapStateToProps = (state) => ({
   persons: state.people.persons,
 });
-export default connect(mapStateToProps, { fetchPersons, deletePerson })(People);
+export default connect(mapStateToProps, {
+  fetchPersons,
+  deletePerson,
+  updatePerson,
+})(People);
