@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Frontend for the CRUD App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### About
 
-## Available Scripts
+This will be a single page app, where one can add/delete/update people from the database.
+Hence, we will be using the 'create-react-app' toolchain.
 
-In the project directory, you can run:
+Further, we will be using [redux](https://react-redux.js.org/) to manage the state of the app.
 
-### `yarn start`
+- [Frontend Deployed on GitHub](http://ayushxx7.github.io/crud-frontend)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Note:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Backend Repo](https://github.com/ayushxx7/crud)
+- [Backend Deployed @ Heroku](https://crud-person-node.herokuapp.com/persons)
 
-### `yarn test`
+### To Test Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+npm start
+```
 
-### `yarn build`
+- This should open up the Dashboard on `localhost:3000`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### To Deploy to GitHub Pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm run deploy
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tech Stack
 
-### `yarn eject`
+| Tech                       | Use Case                                          |
+| -------------------------- | ------------------------------------------------- |
+| `React`                    | UI/UX                                             |
+| `Redux`                    | State Management                                  |
+| `react-bootstrap`          | render forms, buttons and cards                   |
+| `react-bootstrap-editable` | render Editable component for updating Profession |
+| `react-toastify`           | show notifications after success or failure       |
+| `axios`                    | make API calls to backend                         |
+| `redux-devtools-extension` | connect with redux devtools extension             |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### References
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[React.js - Create new React App](https://reactjs.org/docs/create-a-new-react-app.html)
+[Connect React with Redux](https://react-redux.js.org/introduction/basic-tutorial#links)
+[Building a Full Stack App](https://www.youtube.com/watch?v=GieYIzvdt2U&list=PLillGF-RfqbbRA-CIUxlxkUpbq0IFkX60&index=2)
+[Django + React App](https://www.valentinog.com/blog/drf/#Django_REST_with_React_Django_and_React_together)
+[Redux](https://www.youtube.com/watch?v=CVpUuw9XSjY)
+[Setting State using Dynamic Keys](https://stackoverflow.com/questions/29280445/reactjs-setstate-with-a-dynamic-key-name)
+[Align Delete Button](https://stackoverflow.com/questions/6632340/place-a-button-right-aligned)
+[Deploying React App to Github Pages](https://github.com/gitname/react-gh-pages)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Explore
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Next.js](https://nextjs.org/learn/basics/create-nextjs-app/setup)
+[Client Side Rendering vs Server Side Rendering](https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering)

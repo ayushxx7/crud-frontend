@@ -17,6 +17,7 @@ Note:
 ### To Test Locally
 
 ```
+cd people
 npm install
 npm start
 ```
