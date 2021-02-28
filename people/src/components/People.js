@@ -4,12 +4,16 @@ import {
   fetchPersons,
   deletePerson,
   updatePerson,
+  showPopup,
+  hidePopup,
 } from "../redux/actions/people";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import Editable from "react-bootstrap-editable";
+import DeleteModal from "./Delete";
+
 import "../index.css";
 
 class People extends React.Component {
@@ -18,7 +22,25 @@ class People extends React.Component {
     this.props.fetchPersons();
   }
 
+  handleClose = (e, personId) => {
+    console.debug(`closing delete modal for ${personId}`);
+    console.debug(personId);
+    this.props.hidePopup(personId);
+  };
+
+  deleteConfirmed = (e, personId) => {
+    this.props.hidePopup(personId);
+    this.props.deletePerson(personId);
+  };
+
+  handleShow = (e, personId) => {
+    console.debug(`showing delete modal for ${personId}`);
+    console.debug(personId);
+    this.props.showPopup(personId);
+  };
+
   renderCard = (person) => {
+    console.debug("rendering...");
     return (
       <Card
         className="displayPerson mb-2 ml-2 p-3"
@@ -32,11 +54,17 @@ class People extends React.Component {
           {person.name}{" "}
           <Button
             variant="outline"
+            onClick={(e) => this.handleShow(e, person._id)}
             className="deleteButton p-0"
-            onClick={this.props.deletePerson.bind(this, person._id)}
           >
             🗑️
           </Button>
+          <DeleteModal
+            show={person.deletePopup}
+            handleClose={(e) => this.handleClose(e, person._id)}
+            personId={person._id}
+            deletePerson={(e) => this.deleteConfirmed(e, person._id)}
+          />
         </Card.Header>
         <Card.Body>
           <Card.Title id={`${person._id}_${person.about}}`}>
@@ -101,9 +129,12 @@ class People extends React.Component {
 
 const mapStateToProps = (state) => ({
   persons: state.people.persons,
+  force_render: state.people.force_render,
 });
 export default connect(mapStateToProps, {
   fetchPersons,
   deletePerson,
   updatePerson,
+  showPopup,
+  hidePopup,
 })(People);

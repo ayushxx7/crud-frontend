@@ -1,9 +1,11 @@
 import {
-  GET_PERSON,
+  // GET_PERSON,
   GET_PEOPLE,
   ADD_PERSON,
   UPDATE_PERSON,
   DELETE_PERSON,
+  SHOW_POPUP,
+  HIDE_POPUP
 } from "../types";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -74,3 +76,17 @@ export const updatePerson = (personId, profession) => (dispatch) => {
       toast.error(`Error while updating person: ${err}`);
     });
 };
+
+export const showPopup = (personId) => (dispatch) => {
+  dispatch({
+    type: SHOW_POPUP,
+    payload: personId
+  })
+}
+
+export const hidePopup = (personId) => (dispatch) => {
+  dispatch({
+    type: HIDE_POPUP,
+    payload: personId
+  })
+}
